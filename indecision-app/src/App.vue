@@ -4,9 +4,11 @@
     <hr class="mx-auto mt-4 h-1 w-16 rounded-full border-0 bg-indigo-600" />
   </header>
 
-  <!-- <MyCounter :value="10" />
-  <MyCounterScript :value="10" /> -->
-  <MyCounterScript2 :value="10" />
+  <div class="flex justify-center items-center">
+    <MyCounter :value="10" />
+    <MyCounterScript :value="10" />
+    <MyCounterScript2 :value="10" />
+  </div>
 </template>
 
 <script lang="ts" setup>
