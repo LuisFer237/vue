@@ -27,8 +27,6 @@ const scrollToBottom = () => {
   });
 };
 
-// Se dispara cada vez que cambia la altura del contenido: un mensaje nuevo
-// o una imagen que ya conoce su tamaño, sin esperar a que termine de descargarse.
 const resizeObserver = new ResizeObserver(scrollToBottom);
 
 onMounted(() => {
