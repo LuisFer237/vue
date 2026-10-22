@@ -10,6 +10,7 @@
     <button
       class="bg-blue-500 text-white rounded-full p-2 ml-2 hover:bg-blue-600 focus:outline-none"
       @keypress.enter="sendMessage"
+      @click="sendMessage"
     >
       <svg
         width="20px"

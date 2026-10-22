@@ -1,10 +1,16 @@
 <template>
   <section class="mx-auto my-6 w-72 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-    <h3 class="text-sm font-medium tracking-wide text-slate-500 uppercase">Counter</h3>
+    <h3 class="text-sm font-medium tracking-wide text-slate-500 uppercase">
+      Counter: {{ counter }}
+    </h3>
     <p class="text-5xl font-bold text-slate-900 tabular-nums">{{ counter }}</p>
 
-    <h3 class="mt-4 text-sm font-medium tracking-wide text-slate-500 uppercase">Square</h3>
-    <p class="text-2xl font-semibold text-indigo-600 tabular-nums">{{ squareCounter }}</p>
+    <h3 class="mt-4 text-sm font-medium tracking-wide text-slate-500 uppercase">
+      Square: {{ squareCounter }}
+    </h3>
+    <p data-testid="square-label" class="text-2xl font-semibold text-indigo-600 tabular-nums">
+      {{ squareCounter }}
+    </p>
 
     <div class="mt-6 flex gap-3">
       <button
