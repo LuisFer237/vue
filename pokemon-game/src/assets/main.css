@@ -1,0 +1,28 @@
+@import 'tailwindcss';
+@import 'animations.css';
+@theme {
+  /* Game Boy Color - Paleta clásica Pokémon (GBC / Gen 2) */
+  --color-gbc-bg: #f8f8d8;
+  --color-gbc-screen: #e0e8c8;
+  --color-gbc-panel: #d0d8b8;
+  --color-gbc-dark: #181818;
+  --color-gbc-text: #282828;
+
+  /* Colores de ediciones y barras de estado GBC */
+  --color-gbc-red: #c83030;
+  --color-gbc-blue: #3868b8;
+  --color-gbc-gold: #d89010;
+  --color-gbc-silver: #8090a8;
+  --color-gbc-crystal: #30b0c8;
+  --color-gbc-green: #48a048;
+  --color-gbc-yellow: #e8c020;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-gbc-bg);
+    color: var(--color-gbc-text);
+    /* dvh = alto visible real; 100vh en celular incluye la zona bajo la barra del navegador */
+    min-height: 100dvh;
+  }
+}
