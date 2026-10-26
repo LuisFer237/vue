@@ -1,5 +1,6 @@
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
+  // `tests/` lo cubre tsconfig.vitest.json (con los tipos de vitest/globals); aquí no va.
   "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
   "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {
