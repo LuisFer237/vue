@@ -1,6 +1,6 @@
 <template>
   <main
-    v-if="isLoading || randomPokemon.id === null"
+    v-if="isLoading || !randomPokemon"
     class="flex flex-col items-center justify-center gap-4 p-4 text-center"
   >
     <h1 class="text-xl font-bold text-balance sm:text-3xl">Espere por favor</h1>

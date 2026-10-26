@@ -23,9 +23,7 @@ export const usePokemonGame = () => {
     localStorage.setItem(bestScoreKey, String(score))
   }
 
-  const randomPokemon = computed(
-    () => pokemonOptions.value[Math.floor(Math.random() * pokemonOptions.value.length)],
-  )
+  const randomPokemon = ref<Pokemon | null>(null)
   const isLoading = computed(() => pokemons.value.length === 0)
 
   const getPokemons = async (): Promise<Pokemon[]> => {
@@ -48,11 +46,16 @@ export const usePokemonGame = () => {
       gameCounter.value = 0
     }
     gameStatus.value = GameStatus.Playing
-    pokemonOptions.value = pokemons.value.slice(0, howMany)
+
+    const options = pokemons.value.slice(0, howMany)
+    pokemonOptions.value = options
+    randomPokemon.value = options[Math.floor(Math.random() * options.length)] ?? null
     pokemons.value = pokemons.value.slice(howMany)
   }
 
   const checkAnswer = (id: number) => {
+    if (!randomPokemon.value) return
+
     const hasWon = randomPokemon.value.id === id
 
     if (hasWon) {
