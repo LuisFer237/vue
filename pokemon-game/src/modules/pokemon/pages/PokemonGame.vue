@@ -31,7 +31,7 @@
       <div class="framed neutral round-modal flex flex-col items-center gap-3 text-center">
         <span v-if="gameStatus === GameStatus.Lost">Has perdido!</span>
         <span v-if="gameStatus === GameStatus.Lost">Puntuación final: {{ gameCounter }}</span>
-        <button type="button" @click="getNextRound(4)">
+        <button type="button" @click="getNextRound(4)" data-test-id="btn-new-game">
           {{ gameStatus === GameStatus.Won ? 'Continuar' : 'Intentar de nuevo' }}
         </button>
       </div>
