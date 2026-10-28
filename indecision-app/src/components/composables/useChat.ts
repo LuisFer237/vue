@@ -7,7 +7,7 @@ export const useChat = () => {
   const messages = ref<ChatMessage[]>([
     {
       id: new Date().getTime(),
-      message: 'Mondongo?',
+      message: 'Quieres ir por café?',
       itsMine: true,
     },
     {
