@@ -1,7 +1,7 @@
 <template>
   <div class="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2">
     <h1 class="text-2xl font-semibold mb-4">Login</h1>
-    <form action="#" method="POST">
+    <form>
       <!-- Username Input -->
       <div class="mb-4">
         <label for="username" class="block text-gray-600">Username</label>
@@ -31,7 +31,7 @@
       </div>
       <!-- Login Button -->
       <button
-        type="submit"
+        @click="onLogin"
         class="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full"
       >
         Login
@@ -43,3 +43,17 @@
     </div>
   </div>
 </template>
+
+<script lang="ts" setup>
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const onLogin = () => {
+  localStorage.setItem('userId', 'ABC-123');
+
+  const lastPath = localStorage.getItem('lastPath') ?? '/';
+
+  router.replace(lastPath);
+};
+</script>
