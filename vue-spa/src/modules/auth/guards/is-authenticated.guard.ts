@@ -1,8 +1,8 @@
-import type { NavigationGuardNext, RouteRecordNormalized } from 'vue-router';
+import type { NavigationGuardNext, RouteLocationNormalized } from 'vue-router';
 
 const isAuthtenticatedGuard = (
-  to: RouteRecordNormalized,
-  from: RouteRecordNormalized,
+  to: RouteLocationNormalized,
+  from: RouteLocationNormalized,
   next: NavigationGuardNext,
 ) => {
   const userId = localStorage.getItem('userId');

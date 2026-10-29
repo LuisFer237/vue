@@ -35,7 +35,10 @@ export const router = createRouter({
           path: '/pokemon/:id',
           name: 'pokemon',
           beforeEnter: [isAuthtenticatedGuard],
-          props: (route) => ({ id: Number(route.params.id) }),
+          props: (route) => {
+            const id = Number(route.params.id);
+            return isNaN(id) ? { id: 1 } : { id };
+          },
           component: () => import('@/modules/pokemos/pages/PokemonPage.vue'),
         },
         {
