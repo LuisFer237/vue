@@ -11,11 +11,21 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="hover:bg-base-300">
-          <th>2</th>
-          <td>Hart Hagerty</td>
-          <td>Desktop Support Technician</td>
-          <td>Purple</td>
+        <tr
+          v-for="(project, index) in projectsStore.projectsWithCompletion"
+          :key="project.id"
+          class="hover:bg-base-300"
+        >
+          <th>{{ index + 1 }}</th>
+          <td>{{ project.name }}</td>
+          <td>{{ project.tasks.length }}</td>
+          <td class="flex space-x-2">
+            <progress
+              class="progress progress-primary w-56"
+              :value="project.completion"
+              max="100"
+            ></progress>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -24,6 +34,7 @@
   <InputModal
     :open="modalOpen"
     @close="modalOpen = false"
+    @value="projectsStore.addProject"
     title="Crear proyecto"
     subtitle="Momento de crear el proyecto!"
     placeholder="Ingresa el nombre del proyecto"
@@ -65,7 +76,10 @@ import AddCircle from '@/modules/common/components/icons/AddCircle.vue';
 import ModalIcon from '@/modules/common/components/icons/ModalIcon.vue';
 import InputModal from '@/modules/common/components/InputModal.vue';
 import { ref } from 'vue';
+import { useProjectsStore } from '../store/projects.store';
 
 const modalOpen = ref(false);
 const customModalOpen = ref(false);
+
+const projectsStore = useProjectsStore();
 </script>

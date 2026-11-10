@@ -29,7 +29,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 
 interface Props {
   open: boolean;
@@ -47,6 +47,14 @@ const emits = defineEmits<{
 
 const inputValue = ref('');
 const inputRef = ref<HTMLInputElement | null>(null);
+
+watch(
+  () => props.open,
+  (open) => {
+    if (open) inputRef.value?.focus();
+  },
+  { flush: 'post' },
+);
 
 const submitValue = () => {
   console.log(inputValue.value);
