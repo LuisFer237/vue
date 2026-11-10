@@ -21,7 +21,7 @@
                   type="checkbox"
                   :checked="!!task.completedAt"
                   class="checkbox checkbox-primary"
-                  @change="projectStore.toggleTask(project?.id, task.id)"
+                  @change="projectStore.toggleTask(props.id, task.id)"
                 />
               </th>
               <td>{{ task.name }}</td>
