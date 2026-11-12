@@ -1,0 +1,44 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Side Menu > should 1`] = `
+"<aside class="bg-base-200 w-56 shrink-0 min-h-screen">
+  <h2 class="text-lg font-bold mx-4 mt-2 mb-1">Proyectos</h2><!-- Menu -->
+  <ul class="menu bg-base-200 rounded-box w-full">
+    <li>
+      <details>
+        <summary>Project 1</summary>
+        <ul>
+          <li>
+            <router-link-stub to="/project/1"></router-link-stub>
+          </li>
+          <li>
+            <router-link-stub to="/project/1"></router-link-stub>
+          </li>
+          <li>
+            <router-link-stub to="/project/1"></router-link-stub>
+          </li>
+          <li>
+            <router-link-stub to="/project/1"></router-link-stub>
+          </li>
+        </ul>
+      </details>
+    </li>
+    <li>
+      <router-link-stub to="/project/2"></router-link-stub>
+    </li>
+    <li>
+      <details>
+        <summary>Project 3</summary>
+        <ul>
+          <li>
+            <router-link-stub to="/project/3"></router-link-stub>
+          </li>
+          <li>
+            <router-link-stub to="/project/3"></router-link-stub>
+          </li>
+        </ul>
+      </details>
+    </li>
+  </ul>
+</aside>"
+`;
